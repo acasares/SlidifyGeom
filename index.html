@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geometric Shiny Application</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Geometric Shiny Application">
+  <meta name="author" content="A.Casares M.">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Geometric Shiny Application</h1>
+    <h2>Possible max and min rectangles' areas keepping constant distances from an interior point to three vertices.</h2>
+    <p>A.Casares M.<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>The original problem and the actual data:</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="figure/fig1-1.png" alt="plot of chunk fig1"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><strong>Given AX, BX and CX, is the 4th distance DX determined?</strong>  </p>
+
+<ul>
+<li>Answer: Yes, with Pythagoras&#39;  help.<br></li>
+</ul>
+
+<p>For instance:<br>
+Let BX = 9, CX = 7, AX = 3    </p>
+
+<p>\(DX = \sqrt{{BX}^2+{CX}^2-{AX}^2}\)</p>
+
+<pre><code class="r">  DX &lt;- sqrt(BX^2+CX^2-AX^2)
+  cat(sprintf(&#39;DX = %3.1f&#39;,DX))
+</code></pre>
+
+<pre><code>## DX = 11.0
+</code></pre>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>The general question: extreme values of the areas</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h3>For a given set of distances:</h3>
+
+<p>The point X moves only along a circle with   r=AX and center   A.</p>
+
+<p>When X moves, the rectangle adjusts its dimensions to keep the distances.</p>
+
+<p><img src="gadgets.png" alt="width"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><br>
+<br>
+<br>
+<strong>To see it and examine the  problem&#39;s behaviour, the application allows you:</strong>    </p>
+
+<ul>
+<li>To choose the three data distances in a select box.</li>
+<li>And vary the polar angle \(BAX = \alpha\), that sets the position of point X, through a slider control.</li>
+<li>The figures react to these changes. You can see how the area keeps changing.
+<br>
+<br>
+<strong>Between what limits?</strong></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Curve of areas as function of polar angle BAX.</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><br>
+<br>
+<img src="figure/fig2-1.png" alt="plot of chunk fig2"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Empirical procedure:</h3>
+
+<ul>
+<li><p>Areas computed in each point of an uniform sample. </p></li>
+<li><p>The extreme areas may be easily computed from it. </p></li>
+<li><p>The figure shows the answers for a set of 901 distances</p></li>
+<li><p>The minimum value of the area is at polar angle BAX = 0 degrees.</p></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Analytical - Numerical Procedure</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><strong>Finding the analytical function and its derivative is hard to do.</strong>
+<br></p>
+
+<p><img src="figure/fig3-1.png" alt="plot of chunk fig3"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li><p>In accordance to Calculus, at the extremes of a function its derivative is zero.</p></li>
+<li><p>We&#39;ll look for angles making the derivative null, without using the cumbersome function. </p></li>
+<li><p>Through numerical derivatives, shown in blue, that exhibit good linear pattern.</p></li>
+<li><p>Thus, a linear model (<em>magenta</em>) fits them with high R-squared, crossing the X axis at almost the same point.</p></li>
+<li><p>Answers are practically identical, and close to empirical ones.</p></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='The original problem and the actual data:'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The general question: extreme values of the areas'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Curve of areas as function of polar angle BAX.'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Analytical - Numerical Procedure'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
