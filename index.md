@@ -1,6 +1,6 @@
 ---
 title       : Geometric Shiny Application
-subtitle    : Possible max and min rectangles' areas keepping constant distances from an interior point to three vertices. 
+subtitle    : Maximum and minimum rectangles' areas keepping constant distances from an interior point to three vertices. 
 author      : A.Casares M.
 job         : 
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
@@ -12,7 +12,7 @@ knit        : slidify::knit2slides
 
 --- &twocol
 
-## The original problem and the actual data:##
+## The original problem and the actual data:
 
 *** =left
 
@@ -27,7 +27,7 @@ knit        : slidify::knit2slides
 For instance:    
 Let BX = 9, CX = 7, AX = 3    
 
-$DX = \sqrt{{BX}^2+{CX}^2-{AX}^2}$
+$DX = \sqrt{BX^2+CX^2-AX^2}$
 
 ```r
   DX <- sqrt(BX^2+CX^2-AX^2)

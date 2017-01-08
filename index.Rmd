@@ -1,6 +1,6 @@
 ---
 title       : Geometric Shiny Application
-subtitle    : Possible max and min rectangles' areas keepping constant distances from an interior point to three vertices. 
+subtitle    : Maximum and minimum rectangles' areas keepping constant distances from an interior point to three vertices. 
 author      : A.Casares M.
 job         : 
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
