@@ -12,7 +12,7 @@ knit        : slidify::knit2slides
 
 --- &twocol
 
-## The original problem and the actual data:##
+## The original problem and the actual data:
 
 *** =left
 
@@ -70,7 +70,7 @@ knit        : slidify::knit2slides
 For instance:    
 Let BX = 9, CX = 7, AX = 3    
 
-$DX = \sqrt{{BX}^2+{CX}^2-{AX}^2}$
+$DX = \sqrt{BX^2+CX^2-AX^2}$
 ```{r, calculo}
   DX <- sqrt(BX^2+CX^2-AX^2)
   cat(sprintf('DX = %3.1f',DX))
