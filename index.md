@@ -50,7 +50,7 @@ The point X moves only along a circle with   r=AX and center   A.
 
 When X moves, the rectangle adjusts its dimensions to keep the distances.
 
-![width](gadgets.png)
+![width](./gadgets.png)
 
 *** =right
 
