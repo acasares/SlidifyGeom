@@ -7,7 +7,7 @@ framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
-mode        : selfcontained # {standalone, draft}
+mode        : selfcontained # {standalone, selfcontained, draft}
 knit        : slidify::knit2slides
 
 --- &twocol
@@ -16,7 +16,7 @@ knit        : slidify::knit2slides
 
 *** =left
 
-![plot of chunk fig1](assets/fig/fig1-1.png)
+![plot of chunk fig1](figure/fig1-1.png)
 
 *** =right
 
@@ -73,7 +73,7 @@ When X moves, the rectangle adjusts its dimensions to keep the distances.
 
 <br>
 <br>
-![plot of chunk fig2](assets/fig/fig2-1.png)
+![plot of chunk fig2](figure/fig2-1.png)
 
 *** =right
 
@@ -96,7 +96,7 @@ When X moves, the rectangle adjusts its dimensions to keep the distances.
 **Finding the analytical function and its derivative is hard to do.**
 <br>
 
-![plot of chunk fig3](assets/fig/fig3-1.png)
+![plot of chunk fig3](figure/fig3-1.png)
 
 *** =right
 
