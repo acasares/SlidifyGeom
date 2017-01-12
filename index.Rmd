@@ -1,6 +1,6 @@
 ---
 title       : Geometric Shiny Application
-subtitle    : Which are the shortest and largest possible areas of a rectangle, whose distances from 3 vertices to an interior point are given? 
+subtitle    : Which are the shortest and largest possible rectangles whose distances from three vertices to an interior point are given? 
 author      : A.Casares M.
 job         :
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
