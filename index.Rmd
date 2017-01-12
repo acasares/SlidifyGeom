@@ -1,6 +1,6 @@
 ---
 title       : Geometric Shiny Application
-subtitle    : Maximum and minimum rectangles' areas keepping constant distances from an interior point to 3 vertices. 
+subtitle    : Which are the shortest and largest possible areas of a rectangle, whose distances from 3 vertices to an interior point are given? 
 author      : A.Casares M.
 job         :
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
