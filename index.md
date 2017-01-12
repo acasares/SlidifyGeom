@@ -42,7 +42,7 @@ $DX = \sqrt{BX^2+CX^2-AX^2}$
 
 --- &twocol
 
-## The general question: extreme values of the areas    
+## The general question: extreme areas' values    
 
 *** =left
 
