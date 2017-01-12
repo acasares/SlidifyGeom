@@ -2,7 +2,7 @@
 title       : Geometric Shiny Application
 subtitle    : Maximum and minimum rectangles' areas keepping constant distances from an interior point to 3 vertices. 
 author      : A.Casares M.
-job         : 
+job         :
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -63,15 +63,17 @@ knit        : slidify::knit2slides
 
 *** =right
 
-**Given AX, BX and CX, is the 4th distance DX determined?**  
+**Given distances AX, BX and CX, is the 4th distance DX determined?**  
 
 - Answer: Yes, with Pythagoras'  help.    
 
 For instance:    
 Let BX = 9, CX = 7, AX = 3    
 
-$DX = \sqrt{BX^2+CX^2-AX^2}$
+$DX = \sqrt{BX^2+CX^2-AX^2}$    
+
 ```{r, calculo}
+# Running the corresponding R code:
   DX <- sqrt(BX^2+CX^2-AX^2)
   cat(sprintf('DX = %3.1f',DX))
 ```
@@ -84,7 +86,7 @@ $DX = \sqrt{BX^2+CX^2-AX^2}$
 
 ### For a given set of distances: 
 
-The point X moves only along a circle with   r=AX and center   A.
+The point X is allowed to move only along a circle with r = AX and center A.
 
 When X moves, the rectangle adjusts its dimensions to keep the distances.
 
@@ -109,8 +111,6 @@ When X moves, the rectangle adjusts its dimensions to keep the distances.
 
 *** =left
 
-<br>
-<br>
 ```{r fig2, echo=FALSE}
 trios <- data.frame(matrix(c(3,3,2,2,1,5,4,3,12,9,10,7,9,13,16,13,11,7,5,6,8,9,7,6),ncol=3))
         names(trios) <- c("AX","BX","CX")
@@ -148,23 +148,21 @@ trios <- data.frame(matrix(c(3,3,2,2,1,5,4,3,12,9,10,7,9,13,16,13,11,7,5,6,8,9,7
 
 ### Empirical procedure:
 
-- Areas computed in each point of an uniform sample. 
+- Areas are computed in each point of an uniform sample. 
 
-- The extreme areas may be easily computed from it. 
+- The extreme areas may be easily found from it. 
 
 - The figure shows the answers for a set of 901 distances
 
-- The minimum value of the area is at polar angle BAX = 0 degrees.
+- The minimum value of the area is at polar angle $BAX$ = 0 degrees.
 
---- &twocol  
+--- &twocol w1:60% w2:40% 
 
 ## Analytical - Numerical Procedure 
 
 *** =left
 
-**Finding the analytical function and its derivative is hard to do.**
-<br>
-
+**To analytically find the function and its derivative is a hard and boring work to do.**
 ```{r fig3, echo=FALSE}
         dx <- 0.1;alf <- seq(0,90,dx)
         A <- sapply(alf, function(x){
@@ -221,8 +219,3 @@ trios <- data.frame(matrix(c(3,3,2,2,1,5,4,3,12,9,10,7,9,13,16,13,11,7,5,6,8,9,7
 - Thus, a linear model (*magenta*) fits them with high R-squared, crossing the X axis at almost the same point.
 
 - Answers are practically identical, and close to empirical ones.
-
-
-
-
-

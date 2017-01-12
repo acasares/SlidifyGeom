@@ -2,7 +2,7 @@
 title       : Geometric Shiny Application
 subtitle    : Maximum and minimum rectangles' areas keepping constant distances from an interior point to 3 vertices. 
 author      : A.Casares M.
-job         : 
+job         :
 framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -20,16 +20,18 @@ knit        : slidify::knit2slides
 
 *** =right
 
-**Given AX, BX and CX, is the 4th distance DX determined?**  
+**Given distances AX, BX and CX, is the 4th distance DX determined?**  
 
 - Answer: Yes, with Pythagoras'  help.    
 
 For instance:    
 Let BX = 9, CX = 7, AX = 3    
 
-$DX = \sqrt{BX^2+CX^2-AX^2}$
+$DX = \sqrt{BX^2+CX^2-AX^2}$    
+
 
 ```r
+# Running the corresponding R code:
   DX <- sqrt(BX^2+CX^2-AX^2)
   cat(sprintf('DX = %3.1f',DX))
 ```
@@ -46,7 +48,7 @@ $DX = \sqrt{BX^2+CX^2-AX^2}$
 
 ### For a given set of distances: 
 
-The point X moves only along a circle with   r=AX and center   A.
+The point X is allowed to move only along a circle with r = AX and center A.
 
 When X moves, the rectangle adjusts its dimensions to keep the distances.
 
@@ -71,31 +73,27 @@ When X moves, the rectangle adjusts its dimensions to keep the distances.
 
 *** =left
 
-<br>
-<br>
 ![plot of chunk fig2](figure/fig2-1.png)
 
 *** =right
 
 ### Empirical procedure:
 
-- Areas computed in each point of an uniform sample. 
+- Areas are computed in each point of an uniform sample. 
 
-- The extreme areas may be easily computed from it. 
+- The extreme areas may be easily found from it. 
 
 - The figure shows the answers for a set of 901 distances
 
-- The minimum value of the area is at polar angle BAX = 0 degrees.
+- The minimum value of the area is at polar angle $BAX$ = 0 degrees.
 
---- &twocol  
+--- &twocol w1:60% w2:40% 
 
 ## Analytical - Numerical Procedure 
 
 *** =left
 
-**Finding the analytical function and its derivative is hard to do.**
-<br>
-
+**To analytically find the function and its derivative is a hard and boring work to do.**
 ![plot of chunk fig3](figure/fig3-1.png)
 
 *** =right
@@ -109,8 +107,3 @@ When X moves, the rectangle adjusts its dimensions to keep the distances.
 - Thus, a linear model (*magenta*) fits them with high R-squared, crossing the X axis at almost the same point.
 
 - Answers are practically identical, and close to empirical ones.
-
-
-
-
-
