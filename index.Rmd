@@ -103,7 +103,7 @@ When X moves, the rectangle adjusts its dimensions to keep the distances.
 - The figures react to these changes. You can see how the area keeps changing.
 <br>
 <br>
-**Between what limits?**
+**Between which limits?**
 
 --- &twocol
 
